@@ -2,6 +2,7 @@
 from flask import Flask
 import os
 import pyrebase
+import requests 
 config = {
   "apiKey": "AIzaSyCSEsN8V7vjKrEBB0sjgoZs8aG-TLd-suI",
   "authDomain": "forexbygrit.firebaseapp.com",
@@ -9,7 +10,6 @@ config = {
   "storageBucket": "forexbygrit.appspot.com"
 }
 firebase = pyrebase.initialize_app(config)
-import requests 
 r = requests.get('https://forex.1forge.com/1.0.2/quotes?pairs=EURUSD%2CGBPJPY%2CAUDUSD&api_key=o7t3pexnQ7NygogAKovIYhQ362UcmwGM')
 app = Flask(__name__)
 
